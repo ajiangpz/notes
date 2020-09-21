@@ -1,0 +1,27 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-12 16:39:06
+ * @LastEditTime: 2020-09-12 17:55:57
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \notes\demo\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">按钮</button>
+    <script src="./typeof.js"></script>
+    <script>
+      function handleClick(ev) {
+        console.log("click");
+        console.log(ev.target.innerHTML);
+      }
+      document.getElementById("btn").onclick = throttle(handleClick,2000,true);
+    </script>
+  </body>
+</html>
