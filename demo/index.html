@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-09-12 16:39:06
- * @LastEditTime: 2020-09-12 17:55:57
+ * @LastEditTime: 2020-09-26 20:27:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \notes\demo\index.html
@@ -12,16 +12,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .ball {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: brown;
+        position: relative;
+      }
+    </style>
   </head>
   <body>
-    <button id="btn">按钮</button>
-    <script src="./typeof.js"></script>
+    <div class="ball"></div>
+    <script src="./animate.js"></script>
     <script>
-      function handleClick(ev) {
-        console.log("click");
-        console.log(ev.target.innerHTML);
-      }
-      document.getElementById("btn").onclick = throttle(handleClick,2000,true);
+      let oBall = document.getElementsByClassName("ball")[0];
+      console.log(oBall);
+      let animate = new Animate(oBall);
+      console.log(animate);
+      animate.start("left", 500, 2000, "linear");
     </script>
   </body>
 </html>

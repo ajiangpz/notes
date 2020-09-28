@@ -279,7 +279,7 @@ function fib3(n,map={}){
 }				
 ```
 
-### 事件循环																	
+### 事件循环
 
 ```js
 async function a1 () {
@@ -330,6 +330,8 @@ console.log('script end')
 // promise3
 // setTimeout
 ```
+
+
 
 ### 节流函数和防抖函数的区别
 
