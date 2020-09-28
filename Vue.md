@@ -167,7 +167,7 @@ key可以用来唯一标识一个节点，并且在更新子节点时作为两�
 #### 派发更新
 
 - 过程分析
-  数据对象更新时触发setter，会调用dep.notify()，执行每个Watcher的update函数。在update函数中一般会执行queueWatcher方法，将Watcher放入一个队列中，同一个Watcher只会被放入一次。等待结束后，执行nextTick(flushScheduleQueue)异步进行异步更新。首先会先对队列中的watcher进行排序保证父组件的watcher在子组件的watcher之前执行回调，保证用户自定义Watcher在渲染watcher之前执行，接着执行watcher.run()函数，对于userwatche执行watcher的回调函数，对于渲染watcher执行updateComponent函数，即生成VNode和渲染真实dom。
+  数据对象更新时触发setter，会调用dep.notify()，执行每个Watcher的update函数。在update函数中一般会执行queueWatcher方法，将Watcher放入一个队列中，同一个Watcher只会被放入一次。等待结束后，执行nextTick(flushScheduleQueue)异步进行异步更新。首先会先对队列中的watcher进行排序保证父组件的watcher在子组件的watcher之前执行回调，保证用户自定义Watcher在渲染watcher之前执行，接着执行watcher.run()函数，对于userwatcher执行watcher的回调函数，对于渲染watcher执行updateComponent函数，即生成VNode和渲染真实dom。
 
 #### 组件更新
 

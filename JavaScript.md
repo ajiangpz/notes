@@ -1,3 +1,5 @@
+
+
 LazyMan
 
 ```js
@@ -274,8 +276,10 @@ function fib3(n,map={}){
         map[n]=tmp;
         return tmp;
 	}
-}
+}				
 ```
+
+### 事件循环																	
 
 ```js
 async function a1 () {
@@ -460,8 +464,6 @@ function throttle(fn,wait){
   ```js
   Number.prototype.toString.call(number,radix);
   ```
-
-
 
 - 将任意进制转化为任意进制
 
