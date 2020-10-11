@@ -1,6 +1,6 @@
 
 
-LazyMan
+### LazyMan
 
 ```js
 function lazyMan(name) {
@@ -453,7 +453,7 @@ function throttle(fn,wait){
 - Object.is
   Object.is与===的区别在于Object.is(NaN,NaN) 返回true,bject.is(-0,+0)返回false。
 
-#### Javascript中的进制转化
+### Javascript中的进制转化
 
 - 将任意进制转化为10进制
 
