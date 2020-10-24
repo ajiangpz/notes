@@ -57,8 +57,6 @@ key可以用来唯一标识一个节点，并且在更新子节点时作为两�
 
 ### Vue路由机制
 
-
-
 #### Vue路由原理
 
 - `router.push`和`router.replace`有什么区别?
@@ -67,7 +65,7 @@ key可以用来唯一标识一个节点，并且在更新子节点时作为两�
 - history模式和hash模式有什么区别？
 
 - 路由注册
-  Vue路由本身是Vue一个插件，使用Vue.use执行文件的install方法，在VueRouter的install方法中，调用Vue.mixin在每一个组件的beforeCreate生命周期钩子定义_router为传入的VueRouter实例，\_rooterRouter保存跟路由所在的Vue实例。这也是为什么每一个组件都可以访问到this.$router的原因。同时定义当前路由\_route为响应式对象，保证在路由变化时，触发对应组件的重新渲染。
+  Vue路由本身是Vue的一个插件，使用Vue.use执行文件的install方法，在VueRouter的install方法中，调用Vue.mixin在每一个组件的beforeCreate生命周期钩子定义_router为传入的VueRouter实例，\_rooterRouter保存跟路由所在的Vue实例。这也是为什么每一个组件都可以访问到this.$router的原因。同时定义当前路由\_route为响应式对象，保证在路由变化时，触发对应组件的重新渲染。
 
 - VueRouter对象
 

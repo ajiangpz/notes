@@ -417,9 +417,17 @@ function throttle(fn,wait){
 
 `Function`是一个函数，函数一定是对象，对象不一定是函数。
 
-每个函数都是实例化`Function`得到的，因此每一个函数的`[[prototype]]`属性指向`Function`的`prototype`属性。所以`Function`函数的`[[prototype]]`属性会指向`Function.prototype`。所以`Function`函数上的`[[prototype]]`和`prototype`指向的是同一个对象。`Object`构造函数是也是Function的实例对象，因此Object函数的`[[prototype]]`指向`Function.prototype`。而`Function.prototype`本身是一个对象，所以其`[[prototype]]`属性指向的是`Object.prototype`。
+每个函数都是实例化`Function`得到的，因此每一个函数的`[[prototype]]`属性指向`Function`的`prototype`属性。`Function`函数的`[[prototype]]`属性会指向`Function.prototype`。所以`Function`函数上的`[[prototype]]`和`prototype`指向的是同一个对象。`Object`构造函数是也是Function的实例对象，因此Object函数的`[[prototype]]`指向`Function.prototype`。而`Function.prototype`本身是一个对象，所以其`[[prototype]]`属性指向的是`Object.prototype`。
 
-定义一个普通函数对象时，会生成一个原型对象，对象中的`constructor`属性指向函数对象，函数对象的prototype属性指向原型对象，原型对象默认是`Object`的实例对象。
+定义一个函数时，函数的`prototype`属性会指向一个原型对象，且该原型对象上的`constructor`属性会指向该函数。
+
+当通过`new`调用该函数时，生成一个实例对象，且实例对象上的`__proto__`属性会指向构造函数的原型对象，这使得实例对象可以调用函数原型上的方法和属性。
+
+当我们定义A函数，并且让其原型对象的`__proto__`属性指向B函数，那么A函数的实例对象就即可以调用B函数原型对象上的方法，从而形成了原型链。
+
+
+
+
 
 ### Javascript类型判断
 
@@ -432,6 +440,17 @@ function throttle(fn,wait){
   - val.toString(),当val是undefined,null等无法转化为包装对象的值时，会报错
   - val对象可能重写了toString方法
 - lodashAPI
+
+### Javascript类型转化
+
+|                 | Boolean                 | String                          | Number                 |
+| --------------- | ----------------------- | ------------------------------- | ---------------------- |
+| Number          | 除了-0，+0，NAN都是true |                                 |                        |
+| String          | 除了空串都是true        |                                 |                        |
+| undefined、null | false                   |                                 | null=>0,undefined=>NAN |
+| 引用类型        | true                    | '[Object Object]'，[1,2]=>‘1,2’ | []=>0,[1]=>1,其他=>NAN |
+| Boolean         |                         | ‘true’，‘false’                 | true=>1,false=>0       |
+|                 |                         |                                 |                        |
 
 
 
